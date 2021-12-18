@@ -44,3 +44,7 @@ thead {
 header.page-header {
     text-align:center;
 }
+
+nav.side-navbar ul li.active > a {
+    background: #479cdf !important;
+}

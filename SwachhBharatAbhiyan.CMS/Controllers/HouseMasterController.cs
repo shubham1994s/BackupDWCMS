@@ -148,7 +148,15 @@ namespace SwachhBharatAbhiyan.CMS.Controllers
                 {
                     string bb = houseId.houseQRCode;
                     var ii = bb.Split('/');
-                    house.houseQRCode = ii[7];
+                    if(ii.Length <= 7)
+                    {
+                        house.houseQRCode = ii[6];
+                    }
+                    if (ii.Length > 7)
+                    {
+                        house.houseQRCode = ii[7];
+                    }
+                  
                 }
                 HouseDetailsVM houseDetails = childRepository.SaveHouse(house);
                 return Redirect("Index");
